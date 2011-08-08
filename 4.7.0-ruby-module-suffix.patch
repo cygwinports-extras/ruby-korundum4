@@ -1,0 +1,130 @@
+--- origsrc/korundum-4.7.0/modules/akonadi/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/akonadi/CMakeLists.txt	2011-08-08 17:59:52.485668800 -0500
+@@ -13,7 +13,7 @@ target_link_libraries(rubyakonadi
+     ${QTRUBY4SHARED_LIBRARY}
+     ${RUBY_LIBRARY}
+ )
+-set_target_properties(rubyakonadi PROPERTIES PREFIX "" OUTPUT_NAME akonadi)
++set_target_properties(rubyakonadi PROPERTIES PREFIX "" SUFFIX ".so" OUTPUT_NAME akonadi)
+ 
+ install(TARGETS rubyakonadi DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ install(FILES akonadi.rb DESTINATION ${CUSTOM_RUBY_SITE_LIB_DIR}/akonadi)
+--- origsrc/korundum-4.7.0/modules/kate/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/kate/CMakeLists.txt	2011-08-08 18:00:20.387264700 -0500
+@@ -7,7 +7,7 @@ set(kate_LIB_SRCS
+    kate.cpp
+    katehandlers.cpp )
+ 
+-kde4_add_library(kate SHARED ${kate_LIB_SRCS})
++kde4_add_library(kate MODULE ${kate_LIB_SRCS})
+ 
+ target_link_libraries(kate
+     ${QTRUBY4SHARED_LIBRARY}
+@@ -17,7 +17,7 @@ target_link_libraries(kate
+     ${RUBY_LIBRARY}
+     ${KATEINTERFACES_LIBRARY}
+ )
+-set_target_properties(kate PROPERTIES PREFIX "")
++set_target_properties(kate PROPERTIES PREFIX "" SUFFIX ".so")
+ install(TARGETS kate DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ 
+ if (Q_WS_MAC)
+--- origsrc/korundum-4.7.0/modules/khtml/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/khtml/CMakeLists.txt	2011-08-08 17:59:52.490669100 -0500
+@@ -9,7 +9,7 @@ target_link_libraries(rubykhtml
+     ${QT_QTCORE_LIBRARY}
+     ${RUBY_LIBRARY}
+ )
+-set_target_properties(rubykhtml PROPERTIES PREFIX "" OUTPUT_NAME khtml)
++set_target_properties(rubykhtml PROPERTIES PREFIX "" SUFFIX ".so" OUTPUT_NAME khtml)
+ install(TARGETS rubykhtml DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ install(FILES khtml.rb DESTINATION ${CUSTOM_RUBY_SITE_LIB_DIR}/khtml)
+ 
+--- origsrc/korundum-4.7.0/modules/kio/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/kio/CMakeLists.txt	2011-08-08 17:59:52.492669200 -0500
+@@ -10,7 +10,7 @@ target_link_libraries(rubykio
+     ${QT_QTNETWORK_LIBRARY}
+     ${QTRUBY4SHARED_LIBRARY}
+ )
+-set_target_properties(rubykio PROPERTIES PREFIX "" OUTPUT_NAME kio)
++set_target_properties(rubykio PROPERTIES PREFIX "" SUFFIX ".so" OUTPUT_NAME kio)
+ install(TARGETS rubykio DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ install(FILES kio.rb DESTINATION ${CUSTOM_RUBY_SITE_LIB_DIR}/kio)
+ 
+--- origsrc/korundum-4.7.0/modules/ktexteditor/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/ktexteditor/CMakeLists.txt	2011-08-08 17:59:52.495669400 -0500
+@@ -10,7 +10,7 @@ target_link_libraries(rubyktexteditor
+     ${QT_QTCORE_LIBRARY}
+     ${QTRUBY4SHARED_LIBRARY}
+     ${RUBY_LIBRARY})
+-set_target_properties(rubyktexteditor PROPERTIES PREFIX "" OUTPUT_NAME ktexteditor)
++set_target_properties(rubyktexteditor PROPERTIES PREFIX "" SUFFIX ".so" OUTPUT_NAME ktexteditor)
+ install(TARGETS rubyktexteditor DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ install(FILES ktexteditor.rb DESTINATION ${CUSTOM_RUBY_SITE_LIB_DIR}/ktexteditor)
+ 
+--- origsrc/korundum-4.7.0/modules/nepomuk/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/nepomuk/CMakeLists.txt	2011-08-08 17:59:52.497669500 -0500
+@@ -14,7 +14,7 @@ target_link_libraries(rubynepomuk
+     ${RUBY_LIBRARY}
+     ${QT_QTCORE_LIBRARY}
+ )
+-set_target_properties(rubynepomuk PROPERTIES PREFIX "" OUTPUT_NAME nepomuk)
++set_target_properties(rubynepomuk PROPERTIES PREFIX "" SUFFIX ".so" OUTPUT_NAME nepomuk)
+ install(TARGETS rubynepomuk DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ install(FILES nepomuk.rb DESTINATION ${CUSTOM_RUBY_SITE_LIB_DIR}/nepomuk)
+ 
+--- origsrc/korundum-4.7.0/modules/okular/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/okular/CMakeLists.txt	2011-08-08 17:59:52.500669700 -0500
+@@ -12,7 +12,7 @@ target_link_libraries(rubyokular
+     ${QT_QTCORE_LIBRARY}
+     ${SMOKE_BASE_LIBRARY}
+ )
+-set_target_properties(rubyokular PROPERTIES PREFIX "" OUTPUT_NAME okular)
++set_target_properties(rubyokular PROPERTIES PREFIX "" SUFFIX ".so" OUTPUT_NAME okular)
+ install(TARGETS rubyokular DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ install(FILES okular.rb DESTINATION ${CUSTOM_RUBY_SITE_LIB_DIR}/okular)
+ 
+--- origsrc/korundum-4.7.0/modules/plasma/src/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/plasma/src/CMakeLists.txt	2011-08-08 17:59:24.735081600 -0500
+@@ -17,7 +17,7 @@ target_link_libraries(plasma_applet
+     ${QTRUBY4SHARED_LIBRARY}
+     ${RUBY_LIBRARY}
+ )
+-set_target_properties(plasma_applet PROPERTIES PREFIX "")
++set_target_properties(plasma_applet PROPERTIES PREFIX "" SUFFIX ".so")
+ install(TARGETS plasma_applet DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ 
+ if (Q_WS_MAC)
+--- origsrc/korundum-4.7.0/modules/solid/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/solid/CMakeLists.txt	2011-08-08 17:59:52.504669900 -0500
+@@ -12,7 +12,7 @@ target_link_libraries(rubysolid
+     ${QTRUBY4SHARED_LIBRARY}
+     ${RUBY_LIBRARY}
+ )
+-set_target_properties(rubysolid PROPERTIES PREFIX "" OUTPUT_NAME solid)
++set_target_properties(rubysolid PROPERTIES PREFIX "" SUFFIX ".so" OUTPUT_NAME solid)
+ install(TARGETS rubysolid DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ install(FILES solid.rb DESTINATION ${CUSTOM_RUBY_SITE_LIB_DIR}/solid)
+ 
+--- origsrc/korundum-4.7.0/modules/soprano/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/modules/soprano/CMakeLists.txt	2011-08-08 17:59:52.512670400 -0500
+@@ -11,7 +11,7 @@ target_link_libraries(rubysoprano
+     ${QTRUBY4SHARED_LIBRARY}
+     ${RUBY_LIBRARY}
+ )
+-set_target_properties(rubysoprano PROPERTIES PREFIX "" OUTPUT_NAME soprano)
++set_target_properties(rubysoprano PROPERTIES PREFIX "" SUFFIX ".so" OUTPUT_NAME soprano)
+ 
+ install(TARGETS rubysoprano DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})
+ install(FILES soprano.rb DESTINATION ${CUSTOM_RUBY_SITE_LIB_DIR}/soprano)
+--- origsrc/korundum-4.7.0/src/CMakeLists.txt	2011-05-20 15:33:44.000000000 -0500
++++ src/korundum-4.7.0/src/CMakeLists.txt	2011-08-08 18:00:05.354404900 -0500
+@@ -48,7 +48,7 @@ target_link_libraries(korundum4
+     smokekutils      
+     ${QTRUBY4SHARED_LIBRARY})
+ 
+-set_target_properties(korundum4 PROPERTIES PREFIX "")
++set_target_properties(korundum4 PROPERTIES PREFIX "" SUFFIX ".so")
+ 
+ kde4_add_plugin(krubypluginfactory ${factory_SRCS})
+ target_link_libraries(krubypluginfactory ${KDE4_KDECORE_LIBS}

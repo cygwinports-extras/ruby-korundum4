@@ -1,0 +1,11 @@
+ORIG_PN="korundum"
+inherit ruby kde4
+
+
+SRC_URI="mirror://kde/stable/${PV}/src/${ORIG_PN}-${PV}.tar.bz2"
+PATCH_URI="4.7.0-ruby-module-suffix.patch"
+
+CYGCMAKE_ARGS="
+	-DCUSTOM_RUBY_SITE_ARCH_DIR=${RUBY_VENDORARCH}
+	-DCUSTOM_RUBY_SITE_LIB_DIR=${RUBY_VENDORLIB}
+"

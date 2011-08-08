@@ -1,0 +1,4 @@
+category: KDE Ruby
+requires: libgcc1 libkdecore5 libkpim4 libQtCore4 libQtGui4 libQtNetwork4 libQtXml4 libsmokebase3 libsmokekde3 libsmokeqt3 libstdc++6 ruby ruby-qt4
+sdesc: "Ruby KDE4 bindings"
+ldesc: "A collection of language bindings for Qt and KDE"
