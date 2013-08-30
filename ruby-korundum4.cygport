@@ -1,8 +1,12 @@
 ORIG_PN="korundum"
 inherit ruby kde4
 
+NAME="ruby-korundum4"
+VERSION=4.10.5
+RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby KDE4 bindings"
+DESCRIPTION="Part of the KDE bindings suite"
 
 PATCH_URI="4.7.0-ruby-module-suffix.patch"
 
