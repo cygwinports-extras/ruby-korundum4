@@ -3,7 +3,7 @@ inherit ruby kde4
 
 NAME="ruby-korundum4"
 VERSION=4.12.5
-RELEASE=1
+RELEASE=2
 CATEGORY="Ruby"
 SUMMARY="Ruby KDE4 bindings"
 DESCRIPTION="Part of the KDE bindings suite"
