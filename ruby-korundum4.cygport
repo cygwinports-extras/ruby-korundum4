@@ -2,7 +2,7 @@ ORIG_PN="korundum"
 inherit ruby kde4
 
 NAME="ruby-korundum4"
-VERSION=4.13.3
+VERSION=4.14.3
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby KDE4 bindings"
